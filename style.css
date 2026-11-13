@@ -1,0 +1,223 @@
+/* 1. Temel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FDF5E6; /* Sıcak Bej */
+    color: #4B3621; /* Koyu Kahve */
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* 2. Navigasyon (Navbar) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3E2723;
+    padding: 15px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.logo { color: #F5F5DC; font-size: 22px; font-weight: 600; }
+.logo span { color: #D2B48C; margin-left: 5px; }
+.nav-links { list-style: none; display: flex; }
+.nav-links li { margin-left: 20px; }
+.nav-links a { 
+    color: #F5F5DC; 
+    text-decoration: none; 
+    font-size: 14px; 
+    transition: 0.3s; 
+}
+.nav-links a:hover { color: #D2B48C; }
+
+/* 3. Hero (Banner) Alanı - BÜYÜK VE NET ARKA PLAN */
+.hero {
+    height: 70vh; /* Ekranın %70'ini kaplayan büyük alan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; 
+    overflow: hidden;
+    background-color: #3E2723;
+    border-bottom: 5px solid #D2B48C;
+}
+
+.hero-clock {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.45); /* Açık renkli arka planı koyulaştırır, yazıları öne çıkarır */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Resmin üstünde durur */
+    padding: 0 10%;
+}
+
+.hero-content h1 {
+    color: #F5F5DC;
+    font-size: 42px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.6);
+}
+
+.hero-content p {
+    color: #D2B48C;
+    font-size: 18px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.cta-button {
+    background-color: #D2B48C;
+    color: #3E2723;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 25px;
+    display: inline-block;
+    font-weight: 700;
+    transition: 0.4s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.cta-button:hover {
+    background-color: #F5F5DC;
+    transform: translateY(-3px);
+}
+
+/* 4. İçerik ve Ürün Izgarası (Grid) */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.category-section {
+    padding: 60px 0;
+    scroll-margin-top: 90px; /* Navbar'ın başlığı kapatmasını engeller */
+}
+
+.section-title {
+    text-align: center;
+    margin: 0 auto 45px;
+    color: #3E2723;
+    font-size: 26px;
+    border-bottom: 3px solid #D2B48C;
+    display: table;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover { transform: translateY(-8px); }
+
+.product-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.product-text {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #8e806a;
+    text-align: center;
+}
+
+/* 5. Footer (Alt Bilgi) */
+footer {
+    background-color: #3E2723;
+    color: #F5F5DC;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer-tel {
+    color: #D2B48C;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+/* 6. WHATSAPP BUTONU (Fiyat Bilgisi Al - Modern Orta Boyut) */
+.whatsapp-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 26px; /* İdeal orta-üst boyut */
+    border-radius: 50px;
+    text-decoration: none;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1) translateY(-5px);
+    background-color: #20ba5a;
+}
+
+.whatsapp-button img {
+    width: 22px;
+    margin-right: 10px;
+}
+
+/* 7. Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .product-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .hero { height: 50vh; } 
+    .hero-content h1 { font-size: 26px; }
+    .nav-links { display: none; }
+    .whatsapp-button {
+        padding: 10px 20px;
+        font-size: 13px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+body {
+    image-rendering: -webkit-optimize-contrast;
+    background-size: cover;
+}
